@@ -16,7 +16,6 @@ function calculateTotalVat(product,vat){
 }
  
 const product = new Product('simple pc', 100);
-console.log(product)
  
 document.getElementById('ShowProduct').innerHTML=`
   name: ${product.name} <br/>
@@ -24,3 +23,15 @@ document.getElementById('ShowProduct').innerHTML=`
   vat: ${calculateVat(product,21)} € <br/>
   Total price : ${calculateTotalVat(product,21)} €
 `
+
+const products = [
+  {name : "Banana", price: "2"},
+  {name : "Cucumber", price: "3"},
+  {name : "Tomato", price: "1"}
+];
+
+let getAll = products.map(function(element){
+    return `${element.name} ${element.price} `;
+})
+
+document.getElementById('products').innerHTML = getAll
